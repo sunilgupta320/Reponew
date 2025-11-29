@@ -5,8 +5,10 @@
     <classes>
       <class name="test.ExtentReportWithTestNG">
         <methods>
+          <include name="setUp"/>
+          <include name="beforeTest"/>
           <include name="test1"/>
-          <include name="setUpTest"/>
+          <include name="tearDown"/>
           <include name="tearDownTest"/>
         </methods>
       </class> <!-- test.ExtentReportWithTestNG -->
