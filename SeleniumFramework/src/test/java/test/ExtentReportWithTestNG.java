@@ -3,6 +3,10 @@ package test;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
@@ -33,7 +37,7 @@ public class ExtentReportWithTestNG {
 	WebDriver driver;
 
 	
-	@BeforeMethod
+	
 	@BeforeSuite
 	public void setUp() {
 		 htmlReporter = new ExtentSparkReporter("extentReports1.html");
@@ -54,7 +58,7 @@ public class ExtentReportWithTestNG {
 		test.pass("Navigated to Google.com page");		
 		test.log(Status.INFO, "starting test case");
 		test.info("this step shows usage of info (details)");
-		Assert.fail("details");
+		AssertJUnit.fail("details");
 		test.log(Status.INFO, MediaEntityBuilder.createScreenCaptureFromPath("extent.png").build());
 		test.addScreenCaptureFromPath("extent.png");
 
@@ -79,7 +83,7 @@ public class ExtentReportWithTestNG {
 	}
 	
 	
-	@AfterMethod
+	
 	@AfterSuite
 	public void tearDown() {
 		extent.flush();
